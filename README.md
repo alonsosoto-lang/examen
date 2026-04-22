@@ -3,9 +3,13 @@ exameeen
 
 
 # base.py — NO MODIFICAR
+
+
 import requests
  
  
+
+
 class RequestHandler:
     def __init__(self, base_url):
         self.base_url = base_url
