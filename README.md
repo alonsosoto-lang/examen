@@ -49,4 +49,9 @@ class ISSClient(RequestHandler, TelemetrySensor):
         
         def acquire(self):
             return self.get("/positions")   
-        
+class AtmosphereClient(TelemetrySensor):
+    def __init__(self, satellite_id):
+        TelemetrySensor.__init__(self, satellite_id)
+    
+    def acquire(self):
+        return self.get("/wheather")
