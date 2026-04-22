@@ -28,3 +28,34 @@ class RequestHandler:
  
     def describe(self):
         return f"RequestHandler apuntando a: {self.base_url}"
+
+#----------------------------------------
+# Paso 2 - Encapsulamiento
+#----------------------------------------
+
+class AtmosphereClient(RequestHandler):
+
+    def __init__(self, lat, lon):
+
+        super().__init__("https://api.open-meteo.com/v1")
+
+        self.__lat = lat
+        self.__lon = lon
+
+    def get_lat(self)
+
+        return self.__lat
+
+    def get_lon(self)
+
+        return self.__lon
+
+    def get_weather(self):
+
+        endpoint= f"/forecast?latitude=self{self.__lat}&longitude{self.__lon}&current_weather=true"
+
+        data = self.get(endpoint)
+
+        return data["current_weather"]
+    
+    
