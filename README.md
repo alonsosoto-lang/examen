@@ -23,3 +23,24 @@ class RequestHandler:
  
     def describe(self):
         return f"RequestHandler apuntando a: {self.base_url}"
+import requests
+from abc import ABC, abstractmethod
+
+
+
+def get(self, endpoint=""):
+    url = self.base_url + endpoint
+    response = requests.get(url)
+    return response.json()
+
+
+def describe(self):
+    return f"RequestHandler apuntando a: {self.base_url}"
+
+class TelemetrySensor(ABC):
+    def __init__(self):
+
+    @abstractmethod
+    def aquire(self):
+        pass
+        
