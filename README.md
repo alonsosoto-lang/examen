@@ -44,3 +44,9 @@ class TelemetrySensor(ABC):
     def aquire(self):
         pass
         
+class ISSClient(RequestHandler, TelemetrySensor):
+    def __init__(self, base_url):
+        
+        def acquire(self):
+            return self.get("/positions")   
+        
