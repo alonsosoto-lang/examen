@@ -318,5 +318,12 @@ if __name__ == "__main__":
     def describe(self):
         return f"RequestHandler apuntando a: {self.base_url}"
 
-#Reflexión:MissionReport llama a acquire() y describe() en los dos objetos sin importar cuál es cuál. Si agregaras un tercer sensor que también implemente #TelemetrySensor, ¿podrías pasarlo a MissionReport sin modificar esa clase? ¿Qué principio de diseño ilustra esto?
+#Reflexion paso 3:  ¿Por qué es útil declarar un método abstracto si no tiene implementación?
+        Porque sirve como algo obligatorio, al tener a acquire como abstracto, si podria decir como si cada cosa que este en ese sistema debe tener ese metodo sin excepcion, no importa como lo implemente, pero lo tiene que tener 
+¿Qué garantiza Python automáticamente si alguien crea un nuevo sensor y olvida implementar acquire()?
+            Python marcara error en cuanto se intente crear una instancia de esa clase,
+
+#Reflexion 6A: Porque el principio de responsabilidad unica como lo dice asigna una responsabilidad o principio a cada clase y solo deben tener una razon para cambiar, en este caso, en este caso getweathery evalutateconditions tienen responsabilidades diferentes
+#Reflexión 6B:MissionReport llama a acquire() y describe() en los dos objetos sin importar cuál es cuál. Si agregaras un tercer sensor que también implemente #TelemetrySensor, ¿podrías pasarlo a MissionReport sin modificar esa clase? ¿Qué principio de diseño ilustra esto?
 #Si, al heredar de telemetrysensor  cualquier nuevo sensor estaria obligado a implementar ambos metodos.
+
