@@ -25,9 +25,7 @@ class RequestHandler:
  #----------------------------------------------------------------------------------------------\
 
 
- # ============================================================
-# SISTEMA DE TELEMETRÍA ISS — CÓDIGO COMPLETO
-# ============================================================
+
 #
 # PREGUNTAS INICIALES (antes del Paso 1):
 #
@@ -45,14 +43,10 @@ class RequestHandler:
 # ============================================================
 
 
-# ============================================================
-# BASE — NO MODIFICAR
-# ============================================================
-
 import requests
 from abc import ABC, abstractmethod
 
-
+#Esta es la clase base, no se modifica
 class RequestHandler:
     def __init__(self, base_url):
         self.base_url = base_url
@@ -66,14 +60,8 @@ class RequestHandler:
         return f"RequestHandler apuntando a: {self.base_url}"
 
 
-# ============================================================
-# PASO 3: ABSTRACCIÓN — Interfaz común para sensores
-# Pilar POO: ABSTRACCIÓN
-# TelemetrySensor es una clase abstracta que obliga a todas
-# las subclases a implementar el método acquire().
-# No puede instanciarse directamente.
-# ============================================================
-
+# Paso 3
+# TelemetrySensor es una clase abstracta que obliga a todas las clases hijas a implementar el metodo acquire()
 class TelemetrySensor(ABC):
     """
     Interfaz común para todos los sensores del sistema.
@@ -85,12 +73,6 @@ class TelemetrySensor(ABC):
         pass
 
 
-# REFLEXIÓN PASO 3:
-# Es útil declarar un método abstracto porque define un "contrato":
-# cualquier sensor del sistema garantiza que tendrá acquire().
-# Si alguien crea un nuevo sensor y olvida implementar acquire(),
-# Python lanza un TypeError automáticamente al intentar instanciarlo,
-# evitando errores silenciosos en tiempo de ejecución.
 
 
 # ============================================================
