@@ -319,4 +319,4 @@ if __name__ == "__main__":
         return f"RequestHandler apuntando a: {self.base_url}"
 
 #Reflexión:MissionReport llama a acquire() y describe() en los dos objetos sin importar cuál es cuál. Si agregaras un tercer sensor que también implemente #TelemetrySensor, ¿podrías pasarlo a MissionReport sin modificar esa clase? ¿Qué principio de diseño ilustra esto?
-#Si, al heredar de telemetrysensor , cualquier nuevo sensor estaria obligado a implementar ambos metodos.
+#Si, al heredar de telemetrysensor  cualquier nuevo sensor estaria obligado a implementar ambos metodos.
