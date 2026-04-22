@@ -47,13 +47,18 @@ class TelemetrySensor(ABC):
 class ISSClient(RequestHandler, TelemetrySensor):
     def __init__(self,base_url):
         RequestHandler.__init__(self, base_url)
-      
         
-        def acquire(self):
-            return self.get("/positions")   
-class AtmosphereClient(TelemetrySensor):
-    def __init__(self, satellite_id):
-        TelemetrySensor.__init__(self, satellite_id)
-    
+    def acquire(self):
+        return self.get("/positions")
+    def describe(self):
+        return f"[SENSOR-ORB] ISS Tracker - NORAD ID: 25544 | Altitude: {self.base_url}"
+
+class AtmosphereClient(TelemetrySensor, RequestHandler):
+    def __init__(self, base_url):
+        TelemetrySensor.__init__(self)
+        RequestHandler.__init__(self, base_url)
+        
+    def describe(self): #
+        return f"[SENSOR-ATM] Open Meteo - Coordenadas: {self.base_url}"
     def acquire(self):
         return self.get("/wheather")
