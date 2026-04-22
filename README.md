@@ -1,5 +1,5 @@
 # examen
-exameeen
+
 
 
 # base.py — NO MODIFICAR
@@ -52,7 +52,7 @@ class AtmosphereClient(RequestHandler):
 
     def get_weather(self):
 
-        endpoint= f"/forecast?latitude=self{self.__lat}&longitude{self.__lon}&current_weather=true"
+        endpoint= f"/forecast?latitude={self.__lat}&longitude={self.__lon}&current_weather=true"
 
         data = self.get(endpoint)
 
