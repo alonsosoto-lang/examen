@@ -9,8 +9,8 @@ print("EXAMEN 2DO PRACTICO - POO    ")
 print("EQUIPO 7: ")
 print("Alonso Soto Barrera - 39882")
 print("Salvador Flores Cazares - 39883")
-print("Bruno Isaias Macias Guerrero - ")
-print("Jose Alberto Magana Torres")
+print("Bruno Isaias Macias Guerrero -39901 ")
+print("Jose Alberto Magana Torres-39435")
 print("\n\n - Aplicacion de APIs  -\n\n ")
 
 import requests
